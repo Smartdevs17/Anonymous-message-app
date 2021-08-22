@@ -158,10 +158,10 @@ app.post("/login",function (req,res) {
         if(err){
             console.log(err);
         }else{
-            passport.authenticate("local",{sucessRedirect: "/secrets",failureRedirect: "/login"});
-            // passport.authenticate("local")(req,res,function () {
-            //     res.redirect("/secrets");
-            // });
+            // passport.authenticate("local",{sucessRedirect: "/secrets",failureRedirect: "/login"});
+            passport.authenticate("local")(req,res,function () {
+                res.redirect("/secrets");
+            });
         }
     });
 });
